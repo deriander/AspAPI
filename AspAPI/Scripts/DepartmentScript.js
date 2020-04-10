@@ -1,11 +1,49 @@
 ﻿$(document).ready(function () {
-    $('#deptTable').dataTable({
-        "ajax": loadDataDepartment(),
-        "responsive": true,
+    $.fn.DataTable.ext.errMode = 'none';
+    $('#deptTable').DataTable({
+        "ajax": {
+            url: "/Department/LoadDepartment",
+            type: "GET",
+            dataType: "json",
+            dataSrc: "",
+        },
+        "columnDefs": [
+            { "orderable": false, "targets": 3 },
+            { "searchable": false, "targets": 3 }
+        ],
+        "columns": [
+            { "data": "Name", "name": "Name" },
+            {
+                "data": "CreateDate", "render": function (data) {
+                    return moment(data).format('MMMM Do YYYY, h:mm:ss a');
+                }
+            },
+            {
+                "data": "UpdateDate", "render": function (data) {
+                    var notupdate = "Not update yet";
+                    if (data == null) {
+                        return notupdate;
+                    } else {
+                        return moment(data).format('MMMM Do YYYY, h:mm:ss a');
+                    }
+                }
+            },
+            {
+                "data": null, "render": function (data, type, row) {
+                    return '<button type="button" class="btn btn-warning" id="EditBtn" data-toggle="tooltip" data-placement="top" title="Edit" onclick="return GetById(' + row.Id + ')"><i class="mdi mdi-pencil"></i></button> <button type="button" class="btn btn-danger" id="DeleteBtn" data-toggle="tooltip" data-placement="top" title="Delete" onclick="return Delete(' + row.Id + ')"><i class="mdi mdi-delete"></i></button>';
+                }
+            }           
+        ]
     });
-    $('[data-toggle="tooltip]"').tooltip();
 });
 
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+})
+
+
+
+/*
 function loadDataDepartment() {
     $.ajax({
         url: "/Department/LoadDepartment",
@@ -36,6 +74,7 @@ function loadDataDepartment() {
         }
     })
 }
+*/
 
 function ShowModal() {
     $('#myModal').modal('show');
@@ -45,10 +84,19 @@ function ShowModal() {
     $('#SaveBtn').show();
 }
 
+
+function MyTableReload() {
+    var rtable = $('#deptTable').DataTable({
+        ajax: "data.json"
+    });
+
+    rtable.ajax.reload();
+}
+
 function Save() {
     debugger;
     var Department = new Object();
-    Department.Name = $('#Name').val();
+    Department.Name = $('#Name').val();  
     $.ajax({
         type: 'POST',
         url: '/Department/InsertOrEdit/',
@@ -62,12 +110,11 @@ function Save() {
                 title: 'Department Added Successfully',
                 timer: 5000
             }).then(function () {
-                location.reload();
-                ClearScreen();
+                MyTableReload();
             });
         } else {
             Swal.fire('Error', 'Failed to Input', 'error');
-            ClearScreen();
+            MyTableReload();
         }
     })
 }
@@ -90,12 +137,11 @@ function Edit() {
                 title: 'Department Updated Successfully',
                 timer: 5000
             }).then(function () {
-                location.reload();
-                ClearScreen();
+                MyTableReload();
             });
         } else {
             Swal.fire('Error', 'Failed to Input', 'error');
-            ClearScreen();
+            MyTableReload();
         }
     })
 }
@@ -120,7 +166,7 @@ function Delete(Id) {
                         title: 'Department Deleted Successfully'
                     }).then((result) => {
                         if (result.value) {
-                            location.reload();
+                            MyTableReload();
                         }                       
                     });
                 } else {

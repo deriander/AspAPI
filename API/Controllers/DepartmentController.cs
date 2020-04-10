@@ -33,23 +33,33 @@ namespace API.Controllers
         //create
         public IHttpActionResult Post(DepartmentModel departments)
         {
-            var post = department.Create(departments);
-            if (post > 0)
+
+            if (departments.Name != null && departments.Name != "")
             {
-                return Ok("Department Added Succesfully!");
-            }
+                var post = department.Create(departments);
+                if (post > 0)
+                {
+                    return Ok("Department Added Succesfully!");
+                }
+            }   
             return BadRequest("Failed to add Department");
+   
         }
 
         //update
         public IHttpActionResult Put(int Id, DepartmentModel departments)
         {
-            var put = department.Update(Id, departments);
-            if (put > 0)
+            
+            if (departments.Name != null && departments.Name != "")
             {
-                return Ok("Department Updated Succesfully!");
+                var put = department.Update(Id, departments);
+                if (put > 0)
+                {
+                    return Ok("Department Updated Succesfully!");
+                }          
             }
             return BadRequest("Failed to updated Department");
+
         }
 
         //delete
@@ -62,5 +72,6 @@ namespace API.Controllers
             }
             return BadRequest("Failed to deleted Department");
         }
+
     }
 }

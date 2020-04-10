@@ -11,5 +11,6 @@ namespace API.myContext
     {
         public MyContext() : base("AspAPI") { }
         public DbSet<DepartmentModel> Departments { get; set; }
+        public DbSet<DivisionModel> Divisions { get; set; }
     }
 }

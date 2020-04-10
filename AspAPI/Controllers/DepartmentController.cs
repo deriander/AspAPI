@@ -79,7 +79,7 @@ namespace AspAPI.Controllers
                 });
                 return new JsonResult { Data = json, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
             }
-            return Json("Internal sserver error");
+            return Json("Internal server error");
         }
 
         // GET: Data

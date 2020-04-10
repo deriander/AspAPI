@@ -74,8 +74,8 @@ C:\__VISUAL STUDIO PROJECT\AspAPI\API\bin\Microsoft.AI.DependencyCollector.xml
 C:\__VISUAL STUDIO PROJECT\AspAPI\API\bin\Microsoft.AI.ServerTelemetryChannel.xml
 C:\__VISUAL STUDIO PROJECT\AspAPI\API\bin\Microsoft.AI.WindowsServer.xml
 C:\__VISUAL STUDIO PROJECT\AspAPI\API\bin\Microsoft.AI.Web.xml
-C:\__VISUAL STUDIO PROJECT\AspAPI\API\obj\Debug\API.Migrations.addDepartmentModel.resources
-C:\__VISUAL STUDIO PROJECT\AspAPI\API\obj\Debug\API.Migrations.ubahNamaTable.resources
+C:\__VISUAL STUDIO PROJECT\AspAPI\API\obj\Debug\API.csprojResolveAssemblyReference.cache
+C:\__VISUAL STUDIO PROJECT\AspAPI\API\obj\Debug\API.Migrations.addDeptAndDiv.resources
 C:\__VISUAL STUDIO PROJECT\AspAPI\API\obj\Debug\API.csproj.GenerateResource.Cache
 C:\__VISUAL STUDIO PROJECT\AspAPI\API\obj\Debug\API.dll
 C:\__VISUAL STUDIO PROJECT\AspAPI\API\obj\Debug\API.pdb

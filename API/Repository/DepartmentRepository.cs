@@ -30,7 +30,7 @@ namespace API.Repository
             var procedureName = "SP_DeleteDepartment";
             parameters.Add("@Id", Id);
             var deleteDept = connection.Execute(procedureName, parameters, commandType: CommandType.StoredProcedure);
-            return Convert.ToInt32(deleteDept);
+            return deleteDept;
         }
 
         public IEnumerable<DepartmentModel> Get()
