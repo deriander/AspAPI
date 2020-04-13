@@ -32,6 +32,8 @@ C:\__VISUAL STUDIO PROJECT\AspAPI\AspAPI\bin\Antlr3.Runtime.dll
 C:\__VISUAL STUDIO PROJECT\AspAPI\AspAPI\bin\API.dll
 C:\__VISUAL STUDIO PROJECT\AspAPI\AspAPI\bin\EntityFramework.dll
 C:\__VISUAL STUDIO PROJECT\AspAPI\AspAPI\bin\EntityFramework.SqlServer.dll
+C:\__VISUAL STUDIO PROJECT\AspAPI\AspAPI\bin\EPPlus.Core.dll
+C:\__VISUAL STUDIO PROJECT\AspAPI\AspAPI\bin\itextsharp.dll
 C:\__VISUAL STUDIO PROJECT\AspAPI\AspAPI\bin\Microsoft.AI.Agent.Intercept.dll
 C:\__VISUAL STUDIO PROJECT\AspAPI\AspAPI\bin\Microsoft.AI.DependencyCollector.dll
 C:\__VISUAL STUDIO PROJECT\AspAPI\AspAPI\bin\Microsoft.AI.PerfCounterCollector.dll
@@ -71,6 +73,8 @@ C:\__VISUAL STUDIO PROJECT\AspAPI\AspAPI\bin\API.pdb
 C:\__VISUAL STUDIO PROJECT\AspAPI\AspAPI\bin\API.dll.config
 C:\__VISUAL STUDIO PROJECT\AspAPI\AspAPI\bin\EntityFramework.xml
 C:\__VISUAL STUDIO PROJECT\AspAPI\AspAPI\bin\EntityFramework.SqlServer.xml
+C:\__VISUAL STUDIO PROJECT\AspAPI\AspAPI\bin\EPPlus.Core.xml
+C:\__VISUAL STUDIO PROJECT\AspAPI\AspAPI\bin\itextsharp.xml
 C:\__VISUAL STUDIO PROJECT\AspAPI\AspAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\__VISUAL STUDIO PROJECT\AspAPI\AspAPI\bin\System.Net.Http.Formatting.xml
 C:\__VISUAL STUDIO PROJECT\AspAPI\AspAPI\bin\System.Web.Helpers.xml

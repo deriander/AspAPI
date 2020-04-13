@@ -1,4 +1,5 @@
-﻿$(document).ready(function () {
+﻿var datenow = Date();
+$(document).ready(function () {
     $.fn.DataTable.ext.errMode = 'none';
     $('#divTable').DataTable({
         "ajax": {
@@ -62,7 +63,7 @@ function MyTableReload() {
 var departmentsData = []
 function LoadDepartment(element) {
     if (departmentsData.length == 0) {
-        debugger;
+        //debugger;
         $.ajax({
             type: "GET",
             url: "/Department/LoadDepartment",
@@ -78,7 +79,7 @@ function LoadDepartment(element) {
 }
 
 function RenderDepartment(element) {
-    debugger;
+    //debugger;
     var $e = $(element);
     $e.empty();
     $e.append($('<option/>').val('0').text('Select Department').hide());

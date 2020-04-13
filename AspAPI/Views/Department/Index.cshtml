@@ -29,6 +29,11 @@
                     <hr />
                     <!-- Trigger the modal with a button -->
                     <button type="button" onclick="ShowModal()" class="btn pull-left hidden-sm-down btn-success m-b-5" data-placement="top"> <i class="mdi mdi-plus-circle"></i> Create</button>
+                    <div>
+                        <button type="button" onclick="location.href='@Url.Action("ExportToPDF", "Department")'" class="btn pull-left hidden-sm-down btn-default m-lg-2" data-placement="top"> PDF</button>
+                        <button type="button" onclick="location.href='@Url.Action("ExportToExcel", "Department")'" class="btn pull-left hidden-sm-down btn-default m-lg-2" data-placement="top"> Excel</button>
+                        <button type="button" onclick="location.href='@Url.Action("ExportToCSV", "Department")'" class="btn pull-left hidden-sm-down btn-default m-lg-2" data-placement="top"> CSV</button>
+                    </div>
                     <!-- Modal -->
                     <div id="myModal" class="modal fade" role="dialog">
                         <div class="modal-dialog ">
@@ -56,7 +61,7 @@
                             </div>
                         </div>
                     </div>
-                    <table id="deptTable" class="table table-striped table-bordered">
+                    <table id="deptTable" class="display">
                         <thead>
                             <tr>
                                 <th>
@@ -84,7 +89,7 @@
 
 @section scripts{
 
-    <!-- ============================================================== -->
+     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
     <script src="~/Content/Mini AdminPro/assets/plugins/jquery/jquery.min.js"></script>
@@ -103,6 +108,9 @@
     <script src="~/Content/Mini AdminPro/main/js/custom.min.js"></script>
     <!-- This is data table -->
     <script src="~/Content/Mini AdminPro/assets/plugins/datatables/jquery.dataTables.min.js"></script>
+    <link href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap4.min.js "></script>
     <!-- start - This is for export functionality only -->
     <script src="https://cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.flash.min.js"></script>
@@ -117,12 +125,15 @@
     <!-- ============================================================== -->
     <script src="~/Content/Mini AdminPro/assets/plugins/styleswitcher/jQuery.style.switcher.js"></script>
 
+    <!-- Datetime format -->
     <script src="~/Content/Mini AdminPro/assets/plugins/moment/moment.js"></script>
+
+    <!-- internal script -->
     <script src="~/Scripts/DepartmentScript.js"></script>
+
+    <!-- alert -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.10.9/dist/sweetalert2.all.min.js"></script>
 
-    <link href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
-    <script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap4.min.js "></script>
+    
 
 }

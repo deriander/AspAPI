@@ -42,7 +42,6 @@ $(function () {
 })
 
 
-
 /*
 function loadDataDepartment() {
     $.ajax({
